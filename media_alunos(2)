@@ -1,0 +1,31 @@
+print('\033[34m-=\033[m'*40)
+Q = int(input('quantos alunos fez a prova?'))
+
+contador = 0
+
+while contador < Q:
+  nome = str(input('Nome do aluno:')).strip().upper()
+
+  nota1 = float(input('primeira nota:'))
+  while nota1 < 0 or nota1 > 10:
+     print('nota invalida!')
+     nota1 = int(input('Digite novamente a nota (0 a 10):'))
+
+  nota2 = float(input('Segunda nota:'))
+  while nota2 < 0 or nota2 > 10:
+     print('nota invalida!')
+     nota2 = int(input('Digite novamente a nota (0 a 10):'))
+
+  media = (nota1 + nota2)/2
+  print('Sua media é: {:.2f}!'.format(media))
+
+  if media >= 7:
+     print('\033[32mAPROVADO!\033[m')
+
+  elif media < 7 and media >= 5:
+      print('\033[33mRECUPERAÇÃO!\033[m')
+
+  else: print('\033[31mREPROVADO!\033[m')
+
+  contador = contador + 1
+print('\033[34m-=\033[m'*40)
